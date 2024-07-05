@@ -8,8 +8,6 @@ load_dotenv()
 # токен бота
 TOKEN = os.getenv('TG_TOKEN')
 
-
-
 # функция-обработчик команды /start
 async def start(update, context):
     await update.message.reply_text('Привет! Это пример простого бота.')
