@@ -1,3 +1,3 @@
 # telegrm_bot
-# установите необходимые пакеты и pip install -r requirements.txt
+# установите необходимые пакеты pip install -r requirements.txt и
 # добавьте переменную среды перед запуском TG_TOKEN=1234xxxxxx.....

@@ -1,4 +1,4 @@
-from telegram.ext import Application, CommandHandler
+from telegram.ext import Application, CommandHandler, MessageHandler, filters
 from dotenv import load_dotenv
 import os
 
@@ -12,6 +12,9 @@ TOKEN = os.getenv('TG_TOKEN')
 async def start(update, context):
     await update.message.reply_text('Привет! Это пример простого бота.')
 
+# функция-обработчик текстовых сообщений
+async def text(update, context):
+    await update.message.reply_text("Мы получили от тебя текстовое сообщение!")
 
 def main():
 
@@ -21,6 +24,9 @@ def main():
 
     # добавляем обработчик команды /start
     application.add_handler(CommandHandler("start", start))
+
+    # добавляем обработчик текстовых сообщений
+    application.add_handler(MessageHandler(filters.TEXT, text))
 
     # запускаем бота (нажать Ctrl-C для остановки бота)
     application.run_polling()
